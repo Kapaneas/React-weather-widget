@@ -1,0 +1,355 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/assets/vector-pattern-different-doodles-hand-drawn-elements_597910-240.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+.weather-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  min-width: 320px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 20px 15px;
+  box-sizing: border-box;
+}
+
+.weather-widget form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.weather-widget form input[type="text"] {
+  padding: 10px 15px;
+  font-size: 1rem;
+  width: 70%;
+  max-width: 350px;
+  border: 1px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.weather-widget form input[type="text"]:focus {
+  border-color: #0077ff;
+}
+
+.weather-widget form button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: #0077ff;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 8px 8px 0;
+  transition: background-color 0.3s;
+}
+
+.weather-widget form button:hover {
+  background-color: #005bbb;
+}
+
+.weather-widget .top-section {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  min-height: 180px;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.weather-widget .feels-like {
+  text-align: left;
+}
+
+.weather-widget .feels-like h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  text-transform: capitalize;
+}
+
+.weather-widget .feels-like p {
+  font-size: 1.2rem;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.weather-widget .weather-icon img {
+  height: 100px;
+  width: auto;
+}
+
+.weather-widget .date-selector {
+  position: relative;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.weather-widget .date-selector button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.weather-widget .date-selector button:hover {
+  background-color: #f0f0f0;
+  border-color: #0077ff;
+}
+
+.weather-widget .date-selector .dropdown {
+  position: absolute;
+  background: white;
+  border: 1px solid gray;
+  list-style: none;
+  padding: 5px 0;
+  margin: 5px 0 0 0;
+  width: 150px;
+  z-index: 10;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.weather-widget .date-selector .dropdown li {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.weather-widget .date-selector .dropdown li:hover {
+  background: #0077ff;
+  color: white;
+}
+
+.weather-widget .stats-section {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  max-width: 600px;
+  border-top: 1px solid lightgray;
+  width: 100%;
+  padding: 15px 0;
+  box-sizing: border-box;
+}
+
+.weather-widget .stat-box {
+  background-color: #f9f9f9;
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.weather-widget > p {
+  font-size: 1.1rem;
+  color: #666;
+  padding: 30px 0;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .weather-widget .feels-like h2 {
+    font-size: 2rem;
+  }
+  .weather-widget .feels-like p {
+    font-size: 1rem;
+  }
+  .weather-widget .stat-box {
+    font-size: 0.9rem;
+    height: 80px;
+  }
+  .weather-widget form input[type="text"] {
+    width: 60%;
+  }
+  .weather-widget form button {
+    padding: 10px 12px;
+  }
+}
+
+.weather-widget .current-city {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 10px 0 5px 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.weather-widget .temperature h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  text-align: left;
+}
+
+.weather-widget .temperature p {
+  font-size: 1.1rem;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.weather-widget .unit-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.weather-widget .unit-toggle button {
+  background-color: #eee;
+  border: 1px solid #ccc;
+  padding: 10px 25px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.weather-widget .unit-toggle button.active {
+  background-color: #2196f3;
+  color: white;
+  border-color: #2196f3;
+}
+
+.weather-widget .favorites-section {
+  margin-top: 25px;
+  width: 100%;
+}
+
+.weather-widget .favorites-section h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.weather-widget .favorites-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.weather-widget .favorites-section li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.weather-widget .fav-city-btn {
+  padding: 6px 12px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: capitalize;
+}
+
+.weather-widget .fav-city-btn:hover {
+  background-color: #ddd;
+}
+
+.weather-widget .remove-fav-btn {
+  background-color: #ff4d4f;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  line-height: 18px;
+  padding: 0;
+  transition: background-color 0.3s;
+}
+
+.weather-widget .remove-fav-btn:hover {
+  background-color: #d9363e;
+}
+
+.weather-widget .add-fav-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.weather-widget .add-fav-btn {
+  margin: 10px auto 20px auto;
+  padding: 8px 20px;
+  background-color: #2196f3;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.weather-widget .add-fav-btn:hover {
+  background-color: #1769aa;
+}
+
+.weather-widget .favorites-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.weather-widget .favorite-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.weather-widget .favorite-city-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #0077ff;
+  font-weight: 600;
+}
+
+.weather-widget .remove-fav-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: red;
+  font-weight: 600;
+}
