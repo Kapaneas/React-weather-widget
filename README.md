@@ -1,7 +1,7 @@
 # Weather Widget
 
 ## Project Overview
-A React-based weather widget to display weather of different cities,toggle between celcius and fanrenheit and adding favorite cities for quick searches.
+A React-based weather widget to display weather of different cities,toggle between celcius and fahrenheit and adding favorite cities for quick searches.
 
 ## How to Run Locally
 
